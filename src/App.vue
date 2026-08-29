@@ -61,6 +61,16 @@ const syncTrayMenu = () => {
 
 watch(() => settingStore.locale, syncTrayMenu);
 
+const syncTrayVisibility = async () => {
+  try {
+    await invoke("set_tray_visible", { visible: settingStore.showTrayIcon });
+  } catch (error) {
+    console.error("[YDL GUI] failed to update tray visibility:", error);
+  }
+};
+
+watch(() => settingStore.showTrayIcon, () => void syncTrayVisibility());
+
 /** 处理退出请求，有下载任务时弹出确认框 */
 const handleQuitRequest = () => {
   if (downloadStore.activeCount > 0) {
@@ -95,7 +105,7 @@ const win = getCurrentWindow();
 
 // 关闭窗口时的行为
 win.onCloseRequested(async (event) => {
-  if (settingStore.closeToTray) {
+  if (settingStore.showTrayIcon && settingStore.closeToTray) {
     event.preventDefault();
     await win.hide();
   } else {
@@ -173,6 +183,7 @@ onMounted(async () => {
   });
   const cliRequest = await invoke<CliOpenRequest | null>("take_cli_open_request");
   if (cliRequest) handleCliOpenRequest(cliRequest);
+  await syncTrayVisibility();
   win.show();
   syncTrayMenu();
   if (settingStore.autoCheckUpdate) {

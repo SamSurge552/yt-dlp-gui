@@ -75,6 +75,9 @@ export const useSettingStore = defineStore(
     /** 关闭窗口时最小化到托盘 */
     const closeToTray = ref(true);
 
+    /** 显示系统托盘图标 */
+    const showTrayIcon = ref(true);
+
     /** 启动时自动检查更新 */
     const autoCheckUpdate = ref(true);
 
@@ -122,6 +125,7 @@ export const useSettingStore = defineStore(
       maxConcurrentDownloads,
       notifyMode,
       closeToTray,
+      showTrayIcon,
       autoCheckUpdate,
       ytdlpSource,
       denoSource,

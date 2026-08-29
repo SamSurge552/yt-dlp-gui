@@ -155,8 +155,15 @@ watch(
           />
         </div>
         <div class="info-row">
+          <span class="info-label">{{ $t("settings.showTrayIcon") }}</span>
+          <n-switch v-model:value="settingStore.showTrayIcon" />
+        </div>
+        <div class="info-row">
           <span class="info-label">{{ $t("settings.closeToTray") }}</span>
-          <n-switch v-model:value="settingStore.closeToTray" />
+          <n-switch
+            v-model:value="settingStore.closeToTray"
+            :disabled="!settingStore.showTrayIcon"
+          />
         </div>
         <div class="info-row">
           <span class="info-label">{{ $t("settings.autoCheckUpdate") }}</span>
