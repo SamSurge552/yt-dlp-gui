@@ -100,8 +100,7 @@ const sourceText = (tool: ToolKey) => {
 
 /** 工具图标是否亮点：未安装，或检测到可用更新 */
 const showToolDot = (tool: ToolKey) =>
-  statuses[tool]?.installed === false ||
-  statusStore.toolUpdates[tool]?.updateAvailable === true;
+  statuses[tool]?.installed === false || statusStore.toolUpdates[tool]?.updateAvailable === true;
 
 /** 亮点类型：未安装用 error 红点，有可用更新用 warning 黄点 */
 const toolDotType = (tool: ToolKey): "error" | "warning" =>
@@ -115,8 +114,7 @@ const toolTagType = (tool: ToolKey) => {
 
 const toolTagText = (tool: ToolKey) => {
   if (!statuses[tool]) return t("statusBar.checking");
-  if (statusStore.toolUpdates[tool]?.updateAvailable === true)
-    return t("settings.updateAvailable");
+  if (statusStore.toolUpdates[tool]?.updateAvailable === true) return t("settings.updateAvailable");
   return statuses[tool]?.installed ? t("settings.installed") : t("settings.notInstalled");
 };
 
@@ -213,12 +211,7 @@ onUnmounted(() => unlistenProgress?.());
             <n-flex align="center" justify="space-between" :wrap="false" :size="10">
               <n-text style="font-size: 15px">{{ tool.label }}</n-text>
               <n-flex align="center" :size="6" :wrap="false">
-                <n-tag
-                  size="small"
-                  round
-                  :type="toolTagType(tool.key)"
-                  :bordered="false"
-                >
+                <n-tag size="small" round :type="toolTagType(tool.key)" :bordered="false">
                   {{ toolTagText(tool.key) }}
                 </n-tag>
                 <n-tooltip trigger="hover">
@@ -240,10 +233,7 @@ onUnmounted(() => unlistenProgress?.());
               <n-text depth="3" size="small">{{ $t("settings.version") }}</n-text>
               <n-text>{{ statuses[tool.key]?.version || "—" }}</n-text>
             </div>
-            <div
-              v-if="statusStore.toolUpdates[tool.key]?.updateAvailable"
-              class="tool-field"
-            >
+            <div v-if="statusStore.toolUpdates[tool.key]?.updateAvailable" class="tool-field">
               <n-text depth="3" size="small">{{ $t("settings.latestVersion") }}</n-text>
               <n-text type="warning">{{ statusStore.toolUpdates[tool.key]?.latestVersion }}</n-text>
             </div>

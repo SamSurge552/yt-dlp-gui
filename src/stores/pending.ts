@@ -44,8 +44,7 @@ export const createPendingItem = (data: FetchedVideoData, quick = false): Pendin
     limitRate: quick ? settingStore.quickLimitRate : settingStore.defaultLimitRate,
     ffmpegArgs: quick ? settingStore.quickFfmpegArgs : settingStore.defaultFfmpegArgs,
     selectedSubtitles: [],
-    liveFromStart:
-      data.videoInfo.is_live === true || data.videoInfo.live_status === "is_live",
+    liveFromStart: data.videoInfo.is_live === true || data.videoInfo.live_status === "is_live",
   };
 };
 

@@ -424,10 +424,10 @@ onUnmounted(() => unlistenProgress?.());
           </n-flex>
           <n-text depth="3" class="tool-description">{{ tool.description }}</n-text>
 
-            <div v-if="tool.key === 'yt-dlp'" class="channel-row">
-              <n-text depth="3" class="channel-label">
-                {{ $t("settings.ytdlpChannel") }}
-              </n-text>
+          <div v-if="tool.key === 'yt-dlp'" class="channel-row">
+            <n-text depth="3" class="channel-label">
+              {{ $t("settings.ytdlpChannel") }}
+            </n-text>
             <n-select
               :value="settingStore.ytdlpChannel"
               :options="ytdlpChannelOptions"
