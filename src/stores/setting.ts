@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { setI18nLocale, resolveLocale } from "@/locales";
 import { DEFAULT_OUTPUT_TEMPLATE } from "@/utils/output-template";
-import type { HomeDownloadBehavior, HomeMode } from "@/types";
+import type { HomeDownloadBehavior, HomeMode, YtdlpChannel } from "@/types";
 
 export const useSettingStore = defineStore(
   "setting",
@@ -83,6 +83,12 @@ export const useSettingStore = defineStore(
     const denoSource = ref<"managed" | "system">("managed");
     const ffmpegSource = ref<"managed" | "system">("system");
 
+    /** 内置 yt-dlp 的发行通道：stable（稳定版）/ nightly（每日构建）/ master（最新提交构建） */
+    const ytdlpChannel = ref<YtdlpChannel>("stable");
+
+    /** 内置 yt-dlp 当前已安装构建所属的通道；跨通道切换（含降级）时以此判断是否需要重新下载 */
+    const ytdlpInstalledChannel = ref<YtdlpChannel>("stable");
+
     /** YouTube PO Token（用于绕过 403 / 限流） */
     const youtubePoToken = ref("");
 
@@ -126,6 +132,8 @@ export const useSettingStore = defineStore(
       ytdlpSource,
       denoSource,
       ffmpegSource,
+      ytdlpChannel,
+      ytdlpInstalledChannel,
       youtubePoToken,
       youtubeVisitorData,
       showTaskbarProgress,

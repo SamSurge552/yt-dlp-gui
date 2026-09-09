@@ -117,6 +117,8 @@
     "title": "Settings",
     "installed": "Installed",
     "notInstalled": "Not Installed",
+    "updateAvailable": "Update available",
+    "latestVersion": "Latest version",
     "checkUpdate": "Check for updates",
     "toolManager": "Required Setup",
     "sourceManaged": "Built-in",
@@ -143,6 +145,7 @@
       "complete": "Complete"
     },
     "ytdlpDesc": "Core tool required for this application",
+    "ytdlpChannel": "Release channel",
     "version": "Version",
     "path": "Path",
     "denoTitle": "Deno JS Runtime",
