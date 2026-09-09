@@ -25,6 +25,7 @@ export const useSettingStore = defineStore(
     const quickMaxHeight = ref(1080);
     const quickEmbedThumbnail = ref(false);
     const quickWriteThumbnail = ref(false);
+    const quickWriteDescription = ref(false);
     const quickEmbedMetadata = ref(false);
     const quickEmbedChapters = ref(false);
     const quickSponsorblockRemove = ref(false);
@@ -71,6 +72,7 @@ export const useSettingStore = defineStore(
     const defaultEmbedSubs = ref(false);
     const defaultEmbedThumbnail = ref(false);
     const defaultWriteThumbnail = ref(false);
+    const defaultWriteDescription = ref(false);
     const defaultEmbedMetadata = ref(false);
     const defaultEmbedChapters = ref(false);
     const defaultSponsorblockRemove = ref(false);
@@ -121,6 +123,7 @@ export const useSettingStore = defineStore(
       quickMaxHeight,
       quickEmbedThumbnail,
       quickWriteThumbnail,
+      quickWriteDescription,
       quickEmbedMetadata,
       quickEmbedChapters,
       quickSponsorblockRemove,
@@ -143,6 +146,7 @@ export const useSettingStore = defineStore(
       defaultEmbedSubs,
       defaultEmbedThumbnail,
       defaultWriteThumbnail,
+      defaultWriteDescription,
       defaultEmbedMetadata,
       defaultEmbedChapters,
       defaultSponsorblockRemove,

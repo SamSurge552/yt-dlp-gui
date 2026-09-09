@@ -155,6 +155,10 @@ pub(super) fn build_download_args(
     if params.write_thumbnail {
         args.push("--write-thumbnail".to_string());
     }
+    // 简介存为单独的 .description 文件（同样跟随 -o 命名模板）
+    if params.write_description {
+        args.push("--write-description".to_string());
+    }
     if params.embed_metadata {
         args.push("--embed-metadata".to_string());
     }
@@ -333,6 +337,7 @@ mod ffmpeg_requirement_tests {
             embed_subs: false,
             embed_thumbnail: false,
             write_thumbnail: false,
+            write_description: false,
             embed_metadata: false,
             embed_chapters: false,
             sponsorblock_remove: false,

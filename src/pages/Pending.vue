@@ -32,6 +32,7 @@ const persistedOptionSnapshot = computed(() => {
     embedSubs: item.embedSubs,
     embedThumbnail: item.embedThumbnail,
     writeThumbnail: item.writeThumbnail,
+    writeDescription: item.writeDescription,
     embedMetadata: item.embedMetadata,
     embedChapters: item.embedChapters,
     sponsorblockRemove: item.sponsorblockRemove,
@@ -48,6 +49,7 @@ watch(persistedOptionSnapshot, (snapshot) => {
   settingStore.defaultEmbedSubs = snapshot.embedSubs;
   settingStore.defaultEmbedThumbnail = snapshot.embedThumbnail;
   settingStore.defaultWriteThumbnail = snapshot.writeThumbnail;
+  settingStore.defaultWriteDescription = snapshot.writeDescription;
   settingStore.defaultEmbedMetadata = snapshot.embedMetadata;
   settingStore.defaultEmbedChapters = snapshot.embedChapters;
   settingStore.defaultSponsorblockRemove = snapshot.sponsorblockRemove;
@@ -248,6 +250,7 @@ const handleDownload = async () => {
           v-model:embed-subs="activeItem.embedSubs"
           v-model:embed-thumbnail="activeItem.embedThumbnail"
           v-model:write-thumbnail="activeItem.writeThumbnail"
+          v-model:write-description="activeItem.writeDescription"
           v-model:embed-metadata="activeItem.embedMetadata"
           v-model:embed-chapters="activeItem.embedChapters"
           v-model:sponsorblock-remove="activeItem.sponsorblockRemove"

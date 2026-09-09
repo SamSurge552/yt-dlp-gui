@@ -279,6 +279,7 @@
     "embedSubs": "Embed Subtitles",
     "embedThumbnail": "Embed Thumbnail",
     "writeThumbnail": "Download Thumbnail",
+    "writeDescription": "Download description",
     "embedMetadata": "Embed Metadata",
     "embedChapters": "Embed Chapters",
     "skipSponsor": "Skip Sponsors",
