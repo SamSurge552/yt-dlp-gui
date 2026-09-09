@@ -67,6 +67,19 @@ export const useSettingStore = defineStore(
     /** 新下载任务默认使用的 FFmpeg 后处理参数 */
     const defaultFfmpegArgs = ref("");
 
+    /** 标准流程新解析任务的默认额外选项 */
+    const defaultEmbedSubs = ref(false);
+    const defaultEmbedThumbnail = ref(false);
+    const defaultWriteThumbnail = ref(false);
+    const defaultEmbedMetadata = ref(false);
+    const defaultEmbedChapters = ref(false);
+    const defaultSponsorblockRemove = ref(false);
+    const defaultExtractAudio = ref(false);
+    const defaultAudioConvertFormat = ref("");
+    const defaultNoMerge = ref(false);
+    const defaultRecodeFormat = ref("");
+    const defaultLimitRate = ref("");
+
     /** 最大同时下载数，0 = 不限制 */
     const maxConcurrentDownloads = ref(0);
 
@@ -127,6 +140,17 @@ export const useSettingStore = defineStore(
       concurrentFragments,
       noOverwrites,
       defaultFfmpegArgs,
+      defaultEmbedSubs,
+      defaultEmbedThumbnail,
+      defaultWriteThumbnail,
+      defaultEmbedMetadata,
+      defaultEmbedChapters,
+      defaultSponsorblockRemove,
+      defaultExtractAudio,
+      defaultAudioConvertFormat,
+      defaultNoMerge,
+      defaultRecodeFormat,
+      defaultLimitRate,
       maxConcurrentDownloads,
       notifyMode,
       closeToTray,
