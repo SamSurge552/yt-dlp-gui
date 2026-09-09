@@ -107,6 +107,9 @@ const limitRateOptions = [
             <n-checkbox v-model:checked="settingStore.quickEmbedThumbnail" size="small">
               {{ $t("detail.embedThumbnail") }}
             </n-checkbox>
+            <n-checkbox v-model:checked="settingStore.quickWriteThumbnail" size="small">
+              {{ $t("detail.writeThumbnail") }}
+            </n-checkbox>
             <n-checkbox v-model:checked="settingStore.quickEmbedMetadata" size="small">
               {{ $t("detail.embedMetadata") }}
             </n-checkbox>

@@ -209,6 +209,7 @@ const handleDownload = async () => {
           v-model:end-time="activeItem.endTime"
           v-model:embed-subs="activeItem.embedSubs"
           v-model:embed-thumbnail="activeItem.embedThumbnail"
+          v-model:write-thumbnail="activeItem.writeThumbnail"
           v-model:embed-metadata="activeItem.embedMetadata"
           v-model:embed-chapters="activeItem.embedChapters"
           v-model:sponsorblock-remove="activeItem.sponsorblockRemove"

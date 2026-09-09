@@ -278,6 +278,7 @@
     "audioFormat": "Audio Format",
     "embedSubs": "Embed Subtitles",
     "embedThumbnail": "Embed Thumbnail",
+    "writeThumbnail": "Download Thumbnail",
     "embedMetadata": "Embed Metadata",
     "embedChapters": "Embed Chapters",
     "skipSponsor": "Skip Sponsors",

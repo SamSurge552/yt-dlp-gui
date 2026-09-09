@@ -24,6 +24,7 @@ export const useSettingStore = defineStore(
     const quickDownloadMode = ref<"default" | "video" | "audio">("default");
     const quickMaxHeight = ref(1080);
     const quickEmbedThumbnail = ref(false);
+    const quickWriteThumbnail = ref(false);
     const quickEmbedMetadata = ref(false);
     const quickEmbedChapters = ref(false);
     const quickSponsorblockRemove = ref(false);
@@ -106,6 +107,7 @@ export const useSettingStore = defineStore(
       quickDownloadMode,
       quickMaxHeight,
       quickEmbedThumbnail,
+      quickWriteThumbnail,
       quickEmbedMetadata,
       quickEmbedChapters,
       quickSponsorblockRemove,

@@ -278,6 +278,7 @@
     "audioFormat": "音频格式",
     "embedSubs": "嵌入字幕",
     "embedThumbnail": "嵌入缩略图",
+    "writeThumbnail": "下载封面文件",
     "embedMetadata": "嵌入元数据",
     "embedChapters": "嵌入章节",
     "skipSponsor": "跳过赞助片段",

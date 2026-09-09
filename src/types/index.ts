@@ -73,6 +73,7 @@ export interface VideoFormat {
 export interface ExtraOptions {
   embedSubs: boolean;
   embedThumbnail: boolean;
+  writeThumbnail: boolean;
   embedMetadata: boolean;
   embedChapters: boolean;
   sponsorblockRemove: boolean;
@@ -98,6 +99,7 @@ export interface DownloadTaskParams {
   noOverwrites: boolean;
   embedSubs: boolean;
   embedThumbnail: boolean;
+  writeThumbnail: boolean;
   embedMetadata: boolean;
   embedChapters: boolean;
   sponsorblockRemove: boolean;
@@ -163,6 +165,7 @@ export interface PendingItem extends FetchedVideoData {
   endTime: number | null;
   embedSubs: boolean;
   embedThumbnail: boolean;
+  writeThumbnail: boolean;
   embedMetadata: boolean;
   embedChapters: boolean;
   sponsorblockRemove: boolean;

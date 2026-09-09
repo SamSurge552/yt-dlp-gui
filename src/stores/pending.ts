@@ -28,6 +28,7 @@ export const createPendingItem = (data: FetchedVideoData, quick = false): Pendin
     endTime: null,
     embedSubs: false,
     embedThumbnail: quick ? settingStore.quickEmbedThumbnail : false,
+    writeThumbnail: quick ? settingStore.quickWriteThumbnail : false,
     embedMetadata: quick ? settingStore.quickEmbedMetadata : false,
     embedChapters: quick ? settingStore.quickEmbedChapters : false,
     sponsorblockRemove: quick ? settingStore.quickSponsorblockRemove : false,

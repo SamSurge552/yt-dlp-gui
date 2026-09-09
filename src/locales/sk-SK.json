@@ -275,6 +275,7 @@
         "audioFormat": "Formát zvuku",
         "embedSubs": "Vložiť titulky",
         "embedThumbnail": "Vložiť miniatúru",
+        "writeThumbnail": "Stiahnuť miniatúru",
         "embedMetadata": "Vložiť metadáta",
         "embedChapters": "Vložiť kapitoly",
         "skipSponsor": "Preskočiť sponzorov",

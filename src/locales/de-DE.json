@@ -260,6 +260,7 @@
     "audioFormat": "Audioformat",
     "embedSubs": "Untertitel einbetten",
     "embedThumbnail": "Vorschaubild einbetten",
+    "writeThumbnail": "Miniaturansicht herunterladen",
     "embedMetadata": "Metadaten einbetten",
     "embedChapters": "Kapitel einbetten",
     "skipSponsor": "Sponsoren überspringen",

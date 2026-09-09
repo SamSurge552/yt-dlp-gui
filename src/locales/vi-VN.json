@@ -260,6 +260,7 @@
     "audioFormat": "Định dạng âm thanh",
     "embedSubs": "Nhúng phụ đề",
     "embedThumbnail": "Nhúng hình thu nhỏ",
+    "writeThumbnail": "Tải hình thu nhỏ",
     "embedMetadata": "Nhúng metadata",
     "embedChapters": "Nhúng chương",
     "skipSponsor": "Bỏ qua nhà tài trợ",

@@ -260,6 +260,7 @@
     "audioFormat": "Formato de audio",
     "embedSubs": "Incrustar subtítulos",
     "embedThumbnail": "Incrustar miniatura",
+    "writeThumbnail": "Descargar miniatura",
     "embedMetadata": "Incrustar metadatos",
     "embedChapters": "Incrustar capítulos",
     "skipSponsor": "Omitir segmentos patrocinados",

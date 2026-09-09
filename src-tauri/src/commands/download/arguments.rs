@@ -151,6 +151,10 @@ pub(super) fn build_download_args(
     if params.embed_thumbnail {
         args.push("--embed-thumbnail".to_string());
     }
+    // 封面存为单独文件（与 -o 同名模板不同扩展名），与嵌入封面可同时使用
+    if params.write_thumbnail {
+        args.push("--write-thumbnail".to_string());
+    }
     if params.embed_metadata {
         args.push("--embed-metadata".to_string());
     }
@@ -328,6 +332,7 @@ mod ffmpeg_requirement_tests {
             no_overwrites: false,
             embed_subs: false,
             embed_thumbnail: false,
+            write_thumbnail: false,
             embed_metadata: false,
             embed_chapters: false,
             sponsorblock_remove: false,
