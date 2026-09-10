@@ -60,6 +60,7 @@ pub fn run() {
         .manage(commands::DownloadState::default())
         .invoke_handler(tauri::generate_handler![
             app::commands::update_tray_menu,
+            app::commands::set_tray_visible,
             app::commands::reveal_browser_extension,
             app::commands::take_cli_open_request,
             app::browser_bridge::take_browser_extension_imports,

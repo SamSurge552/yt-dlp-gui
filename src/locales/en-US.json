@@ -186,6 +186,7 @@
     "disabled": "Disabled",
     "maxConcurrentDownloads": "Max Concurrent Downloads",
     "unlimited": "Unlimited",
+    "showTrayIcon": "Show system tray icon",
     "closeToTray": "Minimize to tray on close",
     "autoCheckUpdate": "Check for updates on startup",
     "pathResolveMode": "Tool Path Priority",

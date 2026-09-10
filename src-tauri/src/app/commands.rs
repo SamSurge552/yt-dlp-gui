@@ -58,3 +58,11 @@ pub(crate) fn update_tray_menu(
     }
     Ok(())
 }
+
+#[tauri::command]
+pub(crate) fn set_tray_visible(app: tauri::AppHandle, visible: bool) -> Result<(), String> {
+    let tray = app
+        .tray_by_id("main")
+        .ok_or_else(|| "system tray is not available".to_string())?;
+    tray.set_visible(visible).map_err(|e| e.to_string())
+}
