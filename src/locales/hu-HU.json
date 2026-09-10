@@ -221,7 +221,8 @@
     "latestVersion": "Legújabb verzió",
     "ytdlpChannel": "Kiadási csatorna",
     "defaultFfmpegArgs": "Alapértelmezett FFmpeg-argumentumok",
-    "defaultFfmpegArgsHint": "Automatikusan alkalmazza minden újonnan elemzett videóra; feladatonként külön módosítható"
+    "defaultFfmpegArgsHint": "Automatikusan alkalmazza minden újonnan elemzett videóra; feladatonként külön módosítható",
+    "showTrayIcon": "Rendszertálca ikon megjelenítése"
   },
   "statusBar": {
     "title": "Szükséges eszközök állapota",

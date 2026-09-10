@@ -221,7 +221,8 @@
     "youtubeVisitorData": "Visitor Data",
     "youtubeVisitorDataPlaceholder": "예: CgtBYmNkZWZHaGlqaw%3D%3D",
     "defaultFfmpegArgs": "기본 FFmpeg 인수",
-    "defaultFfmpegArgsHint": "이후 새로 분석되는 영상에 자동으로 적용되며, 개별 작업에서 따로 변경할 수 있습니다"
+    "defaultFfmpegArgsHint": "이후 새로 분석되는 영상에 자동으로 적용되며, 개별 작업에서 따로 변경할 수 있습니다",
+    "showTrayIcon": "시스템 트레이 아이콘 표시"
   },
   "statusBar": {
     "title": "필수 도구 상태",

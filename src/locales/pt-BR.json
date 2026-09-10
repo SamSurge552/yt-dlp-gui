@@ -221,7 +221,8 @@
     "youtubeVisitorData": "Visitor Data",
     "youtubeVisitorDataPlaceholder": "ex.: CgtBYmNkZWZHaGlqaw%3D%3D",
     "defaultFfmpegArgs": "Argumentos padrão do FFmpeg",
-    "defaultFfmpegArgsHint": "São aplicados a cada vídeo novo analisado; você ainda pode alterar o valor em cada tarefa"
+    "defaultFfmpegArgsHint": "São aplicados a cada vídeo novo analisado; você ainda pode alterar o valor em cada tarefa",
+    "showTrayIcon": "Mostrar ícone na bandeja do sistema"
   },
   "statusBar": {
     "title": "Status das ferramentas necessárias",

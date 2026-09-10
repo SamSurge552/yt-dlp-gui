@@ -221,7 +221,8 @@
     "youtubeVisitorData": "Visitor Data",
     "youtubeVisitorDataPlaceholder": "例: CgtBYmNkZWZHaGlqaw%3D%3D",
     "defaultFfmpegArgs": "既定の FFmpeg 引数",
-    "defaultFfmpegArgsHint": "以降に新しく解析した動画へ自動的に適用されます。個々のタスクで個別に上書きできます"
+    "defaultFfmpegArgsHint": "以降に新しく解析した動画へ自動的に適用されます。個々のタスクで個別に上書きできます",
+    "showTrayIcon": "システムトレイアイコンを表示"
   },
   "statusBar": {
     "title": "必要なツールの状態",
