@@ -9,6 +9,7 @@ import zhTW from "./zh-TW.json";
 import arEG from "./ar-EG.json";
 import deDE from "./de-DE.json";
 import frFR from "./fr-FR.json";
+import huHU from "./hu-HU.json";
 import ptBR from "./pt-BR.json";
 import viVN from "./vi-VN.json";
 import ukUA from "./uk-UA.json";
@@ -42,6 +43,7 @@ export const localeEntries: LocaleEntry[] = [
   { code: "en-US", flag: "🇺🇸", label: "English", match: (lang) => lang.startsWith("en") },
   { code: "es-ES", flag: "🇪🇸", label: "Español", match: (lang) => lang.startsWith("es") },
   { code: "fr-FR", flag: "🇫🇷", label: "Français", match: (lang) => lang.startsWith("fr") },
+  { code: "hu-HU", flag: "🇭🇺", label: "Magyar", match: (lang) => lang.startsWith("hu") },
   { code: "ja-JP", flag: "🇯🇵", label: "日本語", match: (lang) => lang.startsWith("ja") },
   { code: "ko-KR", flag: "🇰🇷", label: "한국어", match: (lang) => lang.startsWith("ko") },
   { code: "pt-BR", flag: "🇧🇷", label: "Português", match: (lang) => lang.startsWith("pt") },
@@ -105,6 +107,7 @@ const i18n = createI18n({
     "en-US": enUS,
     "es-ES": esES,
     "fr-FR": frFR,
+    "hu-HU": huHU,
     "ja-JP": jaJP,
     "ko-KR": koKR,
     "pt-BR": ptBR,

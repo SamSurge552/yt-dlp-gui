@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { useSettingStore } from "@/stores/setting";
-import { DEFAULT_OUTPUT_TEMPLATE } from "@/utils/output-template";
+import {
+  DEFAULT_OUTPUT_TEMPLATE,
+  EXT_SUFFIX,
+  TEMPLATE_ERROR_KEYS,
+  normalizeOutputTemplate,
+  validateOutputTemplate,
+} from "@/utils/output-template";
 import { useI18n } from "vue-i18n";
 import type { VideoInfo } from "@/types";
 
@@ -71,16 +77,18 @@ const templateVars = computed(() => [
   { label: t("detail.tplDuration"), value: "%(duration)s" },
 ]);
 
-const EXT_SUFFIX = ".%(ext)s";
+const resolvePreset = (template: string): string =>
+  outputTemplatePresets.value.find((p) => p.value !== "__custom__" && p.value === template)
+    ?.value ?? "__custom__";
+const selectedPreset = ref(resolvePreset(settingStore.outputTemplate));
 
-const getInitialPreset = () => {
-  const cur = settingStore.outputTemplate;
-  const match = outputTemplatePresets.value.find(
-    (p) => p.value !== "__custom__" && p.value === cur,
-  );
-  return match ? cur : "__custom__";
-};
-const selectedPreset = ref(getInitialPreset());
+/** 模板可能在外部被修改 */
+watch(
+  () => settingStore.outputTemplate,
+  (template) => {
+    selectedPreset.value = resolvePreset(template);
+  },
+);
 
 const customMode = computed(() => selectedPreset.value === "__custom__");
 
@@ -96,17 +104,38 @@ const templateBase = computed({
     const cur = settingStore.outputTemplate;
     return cur.endsWith(EXT_SUFFIX) ? cur.slice(0, -EXT_SUFFIX.length) : cur;
   },
+  // 幂等：用户手输的 .%(ext)s 不会再被追加一份
   set: (val: string) => {
-    settingStore.outputTemplate = val + EXT_SUFFIX;
+    settingStore.outputTemplate = normalizeOutputTemplate(val);
   },
 });
+
+/** 当前模板的校验错误（无则为 null），用于红框提示与下载前拦截 */
+const templateError = computed(() => validateOutputTemplate(settingStore.outputTemplate));
 
 const resetTemplate = () => {
   settingStore.outputTemplate = DEFAULT_OUTPUT_TEMPLATE;
 };
 
+const customInputRef = ref<{ $el?: HTMLElement } | null>(null);
+
+/** 快捷变量插入到光标处 */
 const insertVar = (v: string) => {
-  templateBase.value = templateBase.value + " " + v;
+  const inputEl = customInputRef.value?.$el?.querySelector("input");
+  const cur = templateBase.value;
+  if (!(inputEl instanceof HTMLInputElement) || inputEl.selectionStart == null) {
+    templateBase.value = cur ? `${cur} ${v}` : v;
+    return;
+  }
+  const start = inputEl.selectionStart;
+  const end = inputEl.selectionEnd ?? start;
+  const prefix = cur.slice(0, start);
+  templateBase.value = `${prefix}${prefix && !prefix.endsWith(" ") ? " " : ""}${v}${cur.slice(end)}`;
+  const caret = start + v.length + (prefix && !prefix.endsWith(" ") ? 1 : 0);
+  nextTick(() => {
+    inputEl.focus();
+    inputEl.setSelectionRange(caret, caret);
+  });
 };
 
 const recodeOptions = computed(() => [
@@ -168,9 +197,11 @@ watch(endTime, (val) => {
           <template v-if="customMode">
             <n-flex align="center" :size="6">
               <n-input
+                ref="customInputRef"
                 v-model:value="templateBase"
                 placeholder="%(title).200s"
                 size="small"
+                :status="templateError ? 'error' : undefined"
                 style="flex: 1"
               >
                 <template #suffix>
@@ -183,6 +214,9 @@ watch(endTime, (val) => {
                 </template>
               </n-button>
             </n-flex>
+            <n-text v-if="templateError" type="error" style="font-size: 12px">
+              {{ t(TEMPLATE_ERROR_KEYS[templateError.code], { char: templateError.char }) }}
+            </n-text>
             <n-flex :size="6" wrap>
               <n-tag
                 v-for="v in templateVars"

@@ -266,7 +266,12 @@ onMounted(async () => {
               </n-icon>
             </template>
           </n-button>
-          <n-popselect v-model:value="settingStore.locale" :options="localeOptions" trigger="click">
+          <n-popselect
+            v-model:value="settingStore.locale"
+            :options="localeOptions"
+            trigger="click"
+            scrollable
+          >
             <n-button :focusable="false" quaternary circle>
               <template #icon>
                 <n-icon>

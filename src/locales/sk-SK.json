@@ -117,6 +117,8 @@
     "title": "Nastavenia",
     "installed": "Nainštalované",
     "notInstalled": "Nie je nainštalované",
+    "updateAvailable": "Dostupná aktualizácia",
+    "latestVersion": "Najnovšia verzia",
     "checkUpdate": "Skontrolovať aktualizácie",
     "toolManager": "Potrebné nastavenia",
     "sourceManaged": "Zabudované",
@@ -143,6 +145,7 @@
       "complete": "Dokončiť"
     },
     "ytdlpDesc": "Základný nástroj potrebný pre túto aplikáciu",
+    "ytdlpChannel": "Kanál vydania",
     "version": "Verzia",
     "path": "Cesta",
     "denoTitle": "Deno JS Runtime",
@@ -299,7 +302,7 @@
     "playlistTag": "Zoznam prehrávania {n}P",
     "views": " počet zobrazení",
     "viewWan": "K",
-    "viewYi": "B"
+    "viewYi": "M"
   },
   "cookie": {
     "settings": "Nastavenia súborov cookie",

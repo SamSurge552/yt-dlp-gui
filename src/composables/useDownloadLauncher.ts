@@ -1,6 +1,10 @@
 import { invoke } from "@tauri-apps/api/core";
 import { useI18n } from "vue-i18n";
-import { composeOutputTemplate } from "@/utils/output-template";
+import {
+  TEMPLATE_ERROR_KEYS,
+  composeOutputTemplate,
+  validateOutputTemplate,
+} from "@/utils/output-template";
 import { useDownloadStore } from "@/stores/download";
 import { useSettingStore } from "@/stores/setting";
 import { useStatusStore } from "@/stores/status";
@@ -149,6 +153,20 @@ export const useDownloadLauncher = () => {
 
     const taskId = `dl_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
     const { cookieFile, cookieBrowser } = await videoStore.getCookieArgs();
+    const outputTemplate = composeOutputTemplate(
+      settingStore.outputTemplate,
+      settingStore.filenamePrefix,
+      settingStore.filenameSuffix,
+    );
+    // 非法文件名模板直接拦截，避免发给 yt-dlp 后报晦涩的格式错误
+    const templateError = validateOutputTemplate(outputTemplate);
+    if (templateError) {
+      window.$message.error(
+        t(TEMPLATE_ERROR_KEYS[templateError.code], { char: templateError.char }),
+      );
+      if (preparingTaskId) markPreparationError(preparingTaskId);
+      return "failed";
+    }
     const params = {
       url: item.url,
       downloadDir: settingStore.downloadDir,
@@ -158,11 +176,7 @@ export const useDownloadLauncher = () => {
       cookieFile,
       cookieBrowser,
       proxy: settingStore.proxy || null,
-      outputTemplate: composeOutputTemplate(
-        settingStore.outputTemplate,
-        settingStore.filenamePrefix,
-        settingStore.filenameSuffix,
-      ),
+      outputTemplate,
       concurrentFragments: settingStore.concurrentFragments || null,
       noOverwrites: settingStore.noOverwrites,
       embedSubs: item.embedSubs,
