@@ -23,7 +23,8 @@
     "empty": "A vágólap üres",
     "invalidUrl": "A vágólap nem tartalmaz érvényes URL-t",
     "readFailed": "A vágólap olvasása meghiúsult",
-    "pasteSuccess": "Beillesztve a vágólapról"
+    "pasteSuccess": "Beillesztve a vágólapról",
+    "writeFailed": "Nem sikerült a vágólapra írni"
   },
   "tray": {
     "show": "Ablak megjelenítése",
@@ -88,7 +89,8 @@
       "paused": "Szüneteltetve",
       "completed": "Kész",
       "error": "Meghiúsult",
-      "cancelled": "Megszakítva"
+      "cancelled": "Megszakítva",
+      "postprocessing": "Utófeldolgozás..."
     },
     "fileNotExist": "A fájl nem található",
     "fileDeletedOrMoved": "Ezt a fájlt áthelyezték vagy törölték. Szeretné eltávolítani a listából?",
@@ -214,7 +216,12 @@
     "appUpdateSuccess": "A frissítés befejeződött. Újraindítás.",
     "appUpdateFailed": "A frissítés meghiúsult: {e}",
     "appIsLatest": "Nincs elérhető frissítés",
-    "systemBinaryNotice": "A „Frissítések keresése” gomb csak az alkalmazás saját változatát frissíti és jelenleg a rendszerszintű yt-dlp van használatban. Állítsa az elérési utak prioritását alkalmazás szerintire, ha a frissített változatot kívánja használni."
+    "systemBinaryNotice": "A „Frissítések keresése” gomb csak az alkalmazás saját változatát frissíti és jelenleg a rendszerszintű yt-dlp van használatban. Állítsa az elérési utak prioritását alkalmazás szerintire, ha a frissített változatot kívánja használni.",
+    "updateAvailable": "Frissítés elérhető",
+    "latestVersion": "Legújabb verzió",
+    "ytdlpChannel": "Kiadási csatorna",
+    "defaultFfmpegArgs": "Alapértelmezett FFmpeg-argumentumok",
+    "defaultFfmpegArgsHint": "Automatikusan alkalmazza minden újonnan elemzett videóra; feladatonként külön módosítható"
   },
   "statusBar": {
     "title": "Szükséges eszközök állapota",
@@ -291,7 +298,15 @@
     "playlistTag": "Lejátszási lista {n}P",
     "views": " megtekintés",
     "viewWan": " E",
-    "viewYi": " M"
+    "viewYi": " M",
+    "codec": "Kodek",
+    "allCodecs": "Összes kodek",
+    "filenamePrefix": "Opcionális előtag",
+    "filenameSuffix": "Opcionális utótag",
+    "tplErrEmpty": "A fájlnévsablon nem lehet üres",
+    "tplErrPercent": "Egyedülálló % jel található; a szó szerinti százalékjelet %% formában kell írni",
+    "tplErrUnclosed": "Hiányzik a %( utáni záró )",
+    "tplErrConversion": "Nem támogatott „{char}” átalakítótípus; a mező után s/d stb. elvárt (lásd az yt-dlp OUTPUT TEMPLATE dokumentációját)"
   },
   "cookie": {
     "settings": "Cookie-beállítások",
@@ -509,6 +524,9 @@
     "denoDesc": "A YouTube-nak JavaScript-futtatókörnyezetre van szüksége a videóinformációk elemzéséhez",
     "denoHint": "A Deno egy, a yt-dlp által használt JavaScript-futtatókörnyezet a videóadatok beolvasására. Ha telepíti a Denót, akkor minden formátumi- és minőséglehetőség elérhetővé válik.",
     "goToSettings": "Ugrás a beállításokhoz",
-    "later": "Majd később"
+    "later": "Majd később",
+    "ffmpegTitle": "Hang és videó egyesítéséhez FFmpeg szükséges",
+    "ffmpegDesc": "A kijelölt video- és hangsávok nem egyesíthetők, mert nem található használható FFmpeg vagy FFprobe.",
+    "ffmpegHint": "Nyissa meg a Beállításokat, válassza a rendszerre telepített változatot vagy telepítse az alkalmazás által kezelt FFmpeg-et, majd indítsa újra a letöltést."
   }
 }

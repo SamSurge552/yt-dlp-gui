@@ -16,13 +16,15 @@
     "selectAll": "تحديد الكل",
     "deselectAll": "إلغاء تحديد الكل",
     "saveFailed": "فشل الحفظ: {e}",
-    "downloadFailed": "فشل التنزيل: {e}"
+    "downloadFailed": "فشل التنزيل: {e}",
+    "copy": "نسخ"
   },
   "clipboard": {
     "empty": "الحافظة فارغة",
     "invalidUrl": "محتوى الحافظة ليس رابطاً صالحاً",
     "readFailed": "تعذر قراءة الحافظة",
-    "pasteSuccess": "تم اللصق من الحافظة"
+    "pasteSuccess": "تم اللصق من الحافظة",
+    "writeFailed": "تعذّرت الكتابة إلى الحافظة"
   },
   "tray": {
     "show": "إظهار النافذة",
@@ -87,7 +89,8 @@
       "paused": "متوقف مؤقتاً",
       "completed": "مكتمل",
       "error": "فشل",
-      "cancelled": "ملغي"
+      "cancelled": "ملغي",
+      "postprocessing": "جارٍ المعالجة اللاحقة..."
     },
     "fileNotExist": "الملف غير موجود",
     "fileDeletedOrMoved": "تم حذف الملف أو نقله. هل تريد إزالة السجل من القائمة؟",
@@ -207,7 +210,18 @@
     "appUpdateSuccess": "اكتمل التحديث، جاري إعادة التشغيل",
     "appUpdateFailed": "فشل التحديث: {e}",
     "appIsLatest": "أنت تستخدم أحدث إصدار",
-    "systemBinaryNotice": "تستخدم حاليًا yt-dlp المثبَّت على النظام. \"التحقق من التحديثات\" يُحدّث نسخة التطبيق فقط، ولا يؤثر على الملف التنفيذي قيد الاستخدام. بدّل \"أولوية مسار الأدوات\" أعلاه إلى \"التطبيق فقط\"، أو حدّث من خلال مدير حزم النظام."
+    "systemBinaryNotice": "تستخدم حاليًا yt-dlp المثبَّت على النظام. \"التحقق من التحديثات\" يُحدّث نسخة التطبيق فقط، ولا يؤثر على الملف التنفيذي قيد الاستخدام. بدّل \"أولوية مسار الأدوات\" أعلاه إلى \"التطبيق فقط\"، أو حدّث من خلال مدير حزم النظام.",
+    "updateAvailable": "يتوفر تحديث",
+    "latestVersion": "أحدث إصدار",
+    "ytdlpChannel": "قناة الإصدارات",
+    "youtubeAdvanced": "خيارات YouTube المتقدمة",
+    "youtubeAdvancedDesc": "يساعد PO Token و visitor_data في تجاوز أخطاء 403 وتحديد المعدّل في بعض فيديوهات YouTube. اتركهما فارغين إن لم تكن بحاجة إليهما. لمزيد من التفاصيل راجع ويكي yt-dlp: Extractors > YouTube > PO Token Guide",
+    "youtubePoToken": "PO Token",
+    "youtubePoTokenPlaceholder": "مثال: mweb.gvs+XXXXXXXX...",
+    "youtubeVisitorData": "Visitor Data",
+    "youtubeVisitorDataPlaceholder": "مثال: CgtBYmNkZWZHaGlqaw%3D%3D",
+    "defaultFfmpegArgs": "وسائط FFmpeg الافتراضية",
+    "defaultFfmpegArgsHint": "تُطبَّق تلقائيًا على كل فيديو جديد يتم تحليله، ويمكن تعديلها لكل مهمة على حدة"
   },
   "statusBar": {
     "title": "حالة الأدوات الضرورية",
@@ -284,7 +298,15 @@
     "playlistTag": "قائمة تشغيل {n}P",
     "views": " مشاهدة",
     "viewWan": "ألف",
-    "viewYi": "مليون"
+    "viewYi": "مليون",
+    "codec": "الترميز",
+    "allCodecs": "كل الترميزات",
+    "filenamePrefix": "بادئة اختيارية",
+    "filenameSuffix": "لاحقة اختيارية",
+    "tplErrEmpty": "لا يمكن أن يكون قالب اسم الملف فارغًا",
+    "tplErrPercent": "توجد علامة % منفردة؛ اكتب علامة النسبة المئوية الحرفية كـ %%",
+    "tplErrUnclosed": "تنقص قوس الإغلاق ) بعد %(",
+    "tplErrConversion": "نوع التحويل “{char}” غير مدعوم؛ يُتوقَّع بعد الحقل نوع مثل s/d (راجع OUTPUT TEMPLATE في yt-dlp)"
   },
   "cookie": {
     "settings": "إعدادات ملفات تعريف الارتباط",
@@ -369,7 +391,39 @@
     "searchPlaceholder": "ابحث في الرسائل أو المرسلين...",
     "selectAtLeastOneField": "يرجى اختيار حقل تصدير واحد على الأقل",
     "saveChatData": "حفظ بيانات الدردشة",
-    "chatDataSaved": "تم حفظ بيانات الدردشة"
+    "chatDataSaved": "تم حفظ بيانات الدردشة",
+    "chaptersTitle": "جلب فصول الفيديو",
+    "chaptersDesc": "عرض فصول الفيديو وتصديرها بصيغة JSON / CSV",
+    "chaptersPageDesc": "جلب معلومات فصول الفيديو (العناوين والفترات الزمنية). يمكن نسخ الطوابع الزمنية لقص التنزيل أو تصدير القائمة إلى ملف",
+    "fetchChapters": "جلب الفصول",
+    "chapterCount": "إجمالي الفصول: {n}",
+    "noChaptersFound": "لا توجد فصول في هذا الفيديو",
+    "chapterCopied": "تم نسخ معلومات الفصل إلى الحافظة",
+    "saveChapters": "حفظ الفصول",
+    "chaptersSaved": "تم حفظ الفصول",
+    "commentsTitle": "تصدير التعليقات",
+    "commentsDesc": "جلب تعليقات فيديوهات YouTube وتصديرها بصيغة JSON / CSV",
+    "commentsPageDesc": "جلب تعليقات الفيديو (من YouTube فقط). كلما زاد عدد التعليقات طال الوقت، فاضبط الحد حسب حاجتك",
+    "commentMaxCount": "الحد الأقصى",
+    "commentSort": "الترتيب",
+    "commentSortTop": "الأكثر رواجًا",
+    "commentSortNew": "الأحدث",
+    "fetchComments": "جلب التعليقات",
+    "commentTotal": "تم تحميل {n} من أصل {total} تعليقًا",
+    "noCommentsFound": "لم يتم العثور على تعليقات",
+    "commentAuthor": "الكاتب",
+    "commentText": "المحتوى",
+    "commentLikes": "الإعجابات",
+    "commentTime": "الوقت",
+    "commentParent": "التعليق الأصل",
+    "commentId": "معرّف التعليق",
+    "commentAuthorId": "معرّف الكاتب",
+    "commentByUploader": "رد صاحب القناة",
+    "commentOnlyTopLevel": "التعليقات الرئيسية فقط",
+    "commentOnlyUploader": "صاحب القناة فقط",
+    "commentSearchPlaceholder": "ابحث في نص التعليق أو الكاتب...",
+    "saveComments": "حفظ التعليقات",
+    "commentsSaved": "تم حفظ التعليقات"
   },
   "plugins": {
     "title": "مدير الإضافات (Plugins)",
@@ -470,6 +524,9 @@
     "denoDesc": "يتطلب YouTube بيئة تشغيل JavaScript لتحليل معلومات الفيديو",
     "denoHint": "Deno هي بيئة تشغيل جافا سكريبت يحتاجها yt-dlp لتحليل معلومات فيديوهات يوتيوب. تثبيتها يتيح لك الوصول لكامل قائمة التنسيقات والجودات العالية.",
     "goToSettings": "الذهاب للإعدادات",
-    "later": "لاحقاً"
+    "later": "لاحقاً",
+    "ffmpegTitle": "دمج الصوت والفيديو يتطلب FFmpeg",
+    "ffmpegDesc": "لا يمكن دمج مسار الفيديو والمسار الصوتي المحددين لتعذّر العثور على FFmpeg أو FFprobe.",
+    "ffmpegHint": "انتقل إلى الإعدادات لاختيار نسخة مثبتة على النظام أو تثبيت FFmpeg التي يديرها التطبيق، ثم ابدأ التنزيل من جديد."
   }
 }

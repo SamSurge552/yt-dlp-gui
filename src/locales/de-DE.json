@@ -16,13 +16,15 @@
     "selectAll": "Alle auswählen",
     "deselectAll": "Alle abwählen",
     "saveFailed": "Speichern fehlgeschlagen: {e}",
-    "downloadFailed": "Download fehlgeschlagen: {e}"
+    "downloadFailed": "Download fehlgeschlagen: {e}",
+    "copy": "Kopieren"
   },
   "clipboard": {
     "empty": "Zwischenablage ist leer",
     "invalidUrl": "Inhalt der Zwischenablage ist keine gültige URL",
     "readFailed": "Zwischenablage konnte nicht gelesen werden",
-    "pasteSuccess": "Aus Zwischenablage eingefügt"
+    "pasteSuccess": "Aus Zwischenablage eingefügt",
+    "writeFailed": "Schreiben in die Zwischenablage fehlgeschlagen"
   },
   "tray": {
     "show": "Fenster anzeigen",
@@ -87,7 +89,8 @@
       "paused": "Pausiert",
       "completed": "Abgeschlossen",
       "error": "Fehlgeschlagen",
-      "cancelled": "Abgebrochen"
+      "cancelled": "Abgebrochen",
+      "postprocessing": "Nachbearbeitung..."
     },
     "fileNotExist": "Datei nicht gefunden",
     "fileDeletedOrMoved": "Datei wurde gelöscht oder verschoben. Eintrag aus der Liste entfernen?",
@@ -207,7 +210,18 @@
     "appUpdateSuccess": "Update abgeschlossen, Neustart läuft",
     "appUpdateFailed": "Update fehlgeschlagen: {e}",
     "appIsLatest": "Du verwendest die neueste Version",
-    "systemBinaryNotice": "Aktuell wird das systemweit installierte yt-dlp verwendet. \"Nach Update suchen\" aktualisiert nur die von der App verwaltete Kopie und wirkt sich nicht auf die genutzte Binärdatei aus. Stelle oben \"Tool-Pfadpriorität\" auf \"Nur App\" oder aktualisiere über deinen Paketmanager."
+    "systemBinaryNotice": "Aktuell wird das systemweit installierte yt-dlp verwendet. \"Nach Update suchen\" aktualisiert nur die von der App verwaltete Kopie und wirkt sich nicht auf die genutzte Binärdatei aus. Stelle oben \"Tool-Pfadpriorität\" auf \"Nur App\" oder aktualisiere über deinen Paketmanager.",
+    "updateAvailable": "Update verfügbar",
+    "latestVersion": "Aktuelle Version",
+    "ytdlpChannel": "Release-Kanal",
+    "youtubeAdvanced": "Erweiterte YouTube-Optionen",
+    "youtubeAdvancedDesc": "PO Token und visitor_data helfen, 403-Fehler und Drosselung bei bestimmten YouTube-Videos zu umgehen. Falls nicht benötigt, leer lassen. Details im yt-dlp-Wiki: Extractors > YouTube > PO Token Guide",
+    "youtubePoToken": "PO Token",
+    "youtubePoTokenPlaceholder": "z. B. mweb.gvs+XXXXXXXX...",
+    "youtubeVisitorData": "Visitor Data",
+    "youtubeVisitorDataPlaceholder": "z. B. CgtBYmNkZWZHaGlqaw%3D%3D",
+    "defaultFfmpegArgs": "Standard-FFmpeg-Argumente",
+    "defaultFfmpegArgsHint": "Werden automatisch auf alle neu analysierten Videos angewendet und lassen sich pro Aufgabe einzeln überschreiben"
   },
   "statusBar": {
     "title": "Status erforderlicher Tools",
@@ -284,7 +298,15 @@
     "playlistTag": "Playlist {n}P",
     "views": " Aufrufe",
     "viewWan": "Tsd.",
-    "viewYi": "Mio."
+    "viewYi": "Mio.",
+    "codec": "Codec",
+    "allCodecs": "Alle Codecs",
+    "filenamePrefix": "Optionaler Präfix",
+    "filenameSuffix": "Optionaler Suffix",
+    "tplErrEmpty": "Die Dateinamenvorlage darf nicht leer sein",
+    "tplErrPercent": "Einzelnes % gefunden; ein literales Prozentzeichen wird als %% geschrieben",
+    "tplErrUnclosed": "Schließende ) für %( fehlt",
+    "tplErrConversion": "Nicht unterstützter Konvertierungstyp „{char}“; nach dem Feld wird s/d usw. erwartet (siehe yt-dlp OUTPUT TEMPLATE)"
   },
   "cookie": {
     "settings": "Cookie-Einstellungen",
@@ -369,7 +391,39 @@
     "searchPlaceholder": "Nachrichten oder Absender suchen...",
     "selectAtLeastOneField": "Bitte mindestens ein Exportfeld auswählen",
     "saveChatData": "Chat-Daten speichern",
-    "chatDataSaved": "Chat-Daten gespeichert"
+    "chatDataSaved": "Chat-Daten gespeichert",
+    "chaptersTitle": "Kapitel abrufen",
+    "chaptersDesc": "Kapitel auflisten und als JSON / CSV exportieren",
+    "chaptersPageDesc": "Kapiteltitel und Zeitbereiche abrufen. Zeitmarken zum Begrenzen des Downloads kopieren oder die Liste als Datei exportieren",
+    "fetchChapters": "Kapitel abrufen",
+    "chapterCount": "{n} Kapitel",
+    "noChaptersFound": "Dieses Video hat keine Kapitel",
+    "chapterCopied": "Kapitelinfo in die Zwischenablage kopiert",
+    "saveChapters": "Kapitel speichern",
+    "chaptersSaved": "Kapitel gespeichert",
+    "commentsTitle": "Kommentare exportieren",
+    "commentsDesc": "YouTube-Kommentare auslesen und als JSON / CSV exportieren",
+    "commentsPageDesc": "Kommentare auslesen (nur YouTube). Mehr Kommentare dauern länger – das Limit bei Bedarf anpassen",
+    "commentMaxCount": "Max. Anzahl",
+    "commentSort": "Sortierung",
+    "commentSortTop": "Top",
+    "commentSortNew": "Neueste",
+    "fetchComments": "Kommentare abrufen",
+    "commentTotal": "{n} von {total} Kommentaren geladen",
+    "noCommentsFound": "Keine Kommentare erhalten",
+    "commentAuthor": "Autor",
+    "commentText": "Text",
+    "commentLikes": "Likes",
+    "commentTime": "Zeit",
+    "commentParent": "Übergeordneter Kommentar",
+    "commentId": "Kommentar-ID",
+    "commentAuthorId": "Autoren-ID",
+    "commentByUploader": "Vom Uploader",
+    "commentOnlyTopLevel": "Nur Kommentare der obersten Ebene",
+    "commentOnlyUploader": "Nur vom Uploader",
+    "commentSearchPlaceholder": "Kommentartext oder Autor suchen...",
+    "saveComments": "Kommentare speichern",
+    "commentsSaved": "Kommentare gespeichert"
   },
   "plugins": {
     "title": "Plugin-Verwaltung",
@@ -470,6 +524,9 @@
     "denoDesc": "YouTube benötigt eine JavaScript-Laufzeit, um Videoinformationen zu analysieren",
     "denoHint": "Deno ist eine JavaScript-Laufzeit, die yt-dlp benötigt, um YouTube-Video-Infos auszuwerten. Mit ihrer Installation erhältst du Zugriff auf die vollständige Format-Liste, einschließlich höherer Qualität.",
     "goToSettings": "Zu den Einstellungen",
-    "later": "Später"
+    "later": "Später",
+    "ffmpegTitle": "FFmpeg wird zum Zusammenführen benötigt",
+    "ffmpegDesc": "Die gewählten Video- und Audiospuren können nicht zusammengeführt werden, weil FFmpeg oder FFprobe nicht verfügbar ist.",
+    "ffmpegHint": "In den Einstellungen eine Systeminstallation auswählen oder das von der App verwaltete FFmpeg installieren und den Download anschließend erneut starten."
   }
 }

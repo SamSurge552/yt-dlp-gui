@@ -16,13 +16,15 @@
     "selectAll": "全選",
     "deselectAll": "取消全選",
     "saveFailed": "儲存失敗: {e}",
-    "downloadFailed": "下載失敗: {e}"
+    "downloadFailed": "下載失敗: {e}",
+    "copy": "複製"
   },
   "clipboard": {
     "empty": "剪貼簿為空",
     "invalidUrl": "剪貼簿內容不是有效的連結",
     "readFailed": "無法讀取剪貼簿",
-    "pasteSuccess": "已從剪貼簿貼上"
+    "pasteSuccess": "已從剪貼簿貼上",
+    "writeFailed": "無法寫入剪貼簿"
   },
   "tray": {
     "show": "顯示視窗",
@@ -87,7 +89,8 @@
       "paused": "已暫停",
       "completed": "下載完成",
       "error": "下載失敗",
-      "cancelled": "已取消"
+      "cancelled": "已取消",
+      "postprocessing": "後處理中..."
     },
     "fileNotExist": "檔案不存在",
     "fileDeletedOrMoved": "該檔案已被刪除或移動，是否從列表中移除該記錄？",
@@ -207,7 +210,18 @@
     "appUpdateSuccess": "更新完成，即將重新啟動",
     "appUpdateFailed": "更新失敗: {e}",
     "appIsLatest": "目前已是最新版本",
-    "systemBinaryNotice": "目前使用的是系統安裝的 yt-dlp，「檢查更新」只會更新應用程式管理的副本，不會影響實際使用的版本。請將上方「工具路徑優先級」切換為「僅應用程式」，或透過系統套件管理器更新。"
+    "systemBinaryNotice": "目前使用的是系統安裝的 yt-dlp，「檢查更新」只會更新應用程式管理的副本，不會影響實際使用的版本。請將上方「工具路徑優先級」切換為「僅應用程式」，或透過系統套件管理器更新。",
+    "updateAvailable": "有更新",
+    "latestVersion": "最新版本",
+    "ytdlpChannel": "版本通道",
+    "youtubeAdvanced": "YouTube 進階選項",
+    "youtubeAdvancedDesc": "PO Token 與 visitor_data 用於繞過部分 YouTube 影片的 403 錯誤與速率限制，不需要時請留空，詳見 yt-dlp wiki: Extractors > YouTube > PO Token Guide",
+    "youtubePoToken": "PO Token",
+    "youtubePoTokenPlaceholder": "例如：mweb.gvs+XXXXXXXX...",
+    "youtubeVisitorData": "Visitor Data",
+    "youtubeVisitorDataPlaceholder": "例如：CgtBYmNkZWZHaGlqaw%3D%3D",
+    "defaultFfmpegArgs": "預設 FFmpeg 參數",
+    "defaultFfmpegArgsHint": "自動套用到之後新解析的影片，每個下載工作仍可個別修改"
   },
   "statusBar": {
     "title": "必要工具狀態",
@@ -284,7 +298,15 @@
     "playlistTag": "合集 {n}P",
     "views": "次播放",
     "viewWan": "萬",
-    "viewYi": "億"
+    "viewYi": "億",
+    "codec": "編碼器",
+    "allCodecs": "全部編碼",
+    "filenamePrefix": "選填前綴",
+    "filenameSuffix": "選填後綴",
+    "tplErrEmpty": "檔名範本不可為空",
+    "tplErrPercent": "存在孤立的 %，字面百分號請寫成 %%",
+    "tplErrUnclosed": "%( 後缺少配對的 )",
+    "tplErrConversion": "不支援的轉換類型「{char}」，欄位後應為 s/d 等類型（詳見 yt-dlp OUTPUT TEMPLATE）"
   },
   "cookie": {
     "settings": "Cookie 設定",
@@ -369,7 +391,39 @@
     "searchPlaceholder": "搜尋訊息內容或傳送者...",
     "selectAtLeastOneField": "請至少選擇一個匯出欄位",
     "saveChatData": "儲存彈幕資料",
-    "chatDataSaved": "彈幕資料已儲存"
+    "chatDataSaved": "彈幕資料已儲存",
+    "chaptersTitle": "下載影片章節",
+    "chaptersDesc": "檢視影片章節列表並匯出為 JSON / CSV",
+    "chaptersPageDesc": "取得影片章節資訊（章節標題與時間區間），可複製時間點用於裁切下載，或匯出為本機檔案",
+    "fetchChapters": "取得章節列表",
+    "chapterCount": "共 {n} 個章節",
+    "noChaptersFound": "此影片沒有章節資訊",
+    "chapterCopied": "已複製章節資訊到剪貼簿",
+    "saveChapters": "儲存章節列表",
+    "chaptersSaved": "章節列表已儲存",
+    "commentsTitle": "匯出影片留言",
+    "commentsDesc": "擷取 YouTube 影片留言並匯出為 JSON / CSV",
+    "commentsPageDesc": "擷取影片留言（僅 YouTube）。留言數量越多耗時越長，請依需求調整上限",
+    "commentMaxCount": "最大數量",
+    "commentSort": "排序",
+    "commentSortTop": "熱門",
+    "commentSortNew": "最新",
+    "fetchComments": "取得留言",
+    "commentTotal": "已載入 {n} / {total} 則留言",
+    "noCommentsFound": "未取得留言",
+    "commentAuthor": "作者",
+    "commentText": "內容",
+    "commentLikes": "讚",
+    "commentTime": "時間",
+    "commentParent": "父留言",
+    "commentId": "留言 ID",
+    "commentAuthorId": "作者 ID",
+    "commentByUploader": "頻道主回覆",
+    "commentOnlyTopLevel": "僅主留言",
+    "commentOnlyUploader": "僅頻道主",
+    "commentSearchPlaceholder": "搜尋留言內容或作者...",
+    "saveComments": "儲存留言",
+    "commentsSaved": "留言已儲存"
   },
   "plugins": {
     "title": "外掛管理",
@@ -470,6 +524,9 @@
     "denoDesc": "YouTube 需要 JavaScript 執行環境來解析影片資訊",
     "denoHint": "Deno 是 yt-dlp 解析 YouTube 影片資訊所需的 JavaScript 執行環境。安裝後可取得完整的格式清單，包括更高畫質的選項。",
     "goToSettings": "前往設定",
-    "later": "稍後再說"
+    "later": "稍後再說",
+    "ffmpegTitle": "合併影音需要 FFmpeg",
+    "ffmpegDesc": "目前找不到可用的 FFmpeg 或 FFprobe，所選的視訊與音訊串流無法合併。",
+    "ffmpegHint": "請前往設定選擇系統安裝版，或安裝應用程式管理的 FFmpeg，然後重新開始下載。"
   }
 }

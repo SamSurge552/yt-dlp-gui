@@ -16,13 +16,15 @@
     "selectAll": "Chọn tất cả",
     "deselectAll": "Bỏ chọn tất cả",
     "saveFailed": "Lưu thất bại: {e}",
-    "downloadFailed": "Tải xuống thất bại: {e}"
+    "downloadFailed": "Tải xuống thất bại: {e}",
+    "copy": "Sao chép"
   },
   "clipboard": {
     "empty": "Bộ nhớ tạm trống",
     "invalidUrl": "Nội dung trong bộ nhớ tạm không phải URL hợp lệ",
     "readFailed": "Không thể đọc bộ nhớ tạm",
-    "pasteSuccess": "Đã dán từ bộ nhớ tạm"
+    "pasteSuccess": "Đã dán từ bộ nhớ tạm",
+    "writeFailed": "Không thể ghi vào bộ nhớ tạm"
   },
   "tray": {
     "show": "Hiện cửa sổ",
@@ -87,7 +89,8 @@
       "paused": "Đã tạm dừng",
       "completed": "Hoàn tất",
       "error": "Thất bại",
-      "cancelled": "Đã hủy"
+      "cancelled": "Đã hủy",
+      "postprocessing": "Đang hậu xử lý..."
     },
     "fileNotExist": "Không tìm thấy tệp",
     "fileDeletedOrMoved": "Tệp đã bị xóa hoặc di chuyển. Gỡ mục này khỏi danh sách?",
@@ -207,7 +210,18 @@
     "appUpdateSuccess": "Cập nhật hoàn tất, đang khởi động lại",
     "appUpdateFailed": "Cập nhật thất bại: {e}",
     "appIsLatest": "Bạn đang dùng phiên bản mới nhất",
-    "systemBinaryNotice": "Đang sử dụng yt-dlp cài đặt trên hệ thống. \"Kiểm tra cập nhật\" chỉ cập nhật bản do ứng dụng quản lý và không ảnh hưởng đến tệp đang dùng. Hãy chuyển \"Ưu tiên đường dẫn công cụ\" ở trên sang \"Chỉ ứng dụng\" hoặc cập nhật bằng trình quản lý gói của hệ thống."
+    "systemBinaryNotice": "Đang sử dụng yt-dlp cài đặt trên hệ thống. \"Kiểm tra cập nhật\" chỉ cập nhật bản do ứng dụng quản lý và không ảnh hưởng đến tệp đang dùng. Hãy chuyển \"Ưu tiên đường dẫn công cụ\" ở trên sang \"Chỉ ứng dụng\" hoặc cập nhật bằng trình quản lý gói của hệ thống.",
+    "updateAvailable": "Có bản cập nhật",
+    "latestVersion": "Phiên bản mới nhất",
+    "ytdlpChannel": "Kênh phát hành",
+    "youtubeAdvanced": "Tùy chọn nâng cao cho YouTube",
+    "youtubeAdvancedDesc": "PO Token và visitor_data giúp vượt qua lỗi 403 và giới hạn tốc độ trên một số video YouTube. Nếu không cần thì hãy để trống. Xem thêm trong wiki của yt-dlp: Extractors > YouTube > PO Token Guide",
+    "youtubePoToken": "PO Token",
+    "youtubePoTokenPlaceholder": "ví dụ: mweb.gvs+XXXXXXXX...",
+    "youtubeVisitorData": "Visitor Data",
+    "youtubeVisitorDataPlaceholder": "ví dụ: CgtBYmNkZWZHaGlqaw%3D%3D",
+    "defaultFfmpegArgs": "Tham số FFmpeg mặc định",
+    "defaultFfmpegArgsHint": "Tự động áp dụng cho các video mới được phân tích sau này; mỗi tác vụ tải về vẫn có thể chỉnh riêng"
   },
   "statusBar": {
     "title": "Trạng thái công cụ cần thiết",
@@ -284,7 +298,15 @@
     "playlistTag": "Danh sách {n}P",
     "views": " lượt xem",
     "viewWan": "N",
-    "viewYi": "Tr"
+    "viewYi": "Tr",
+    "codec": "Codec",
+    "allCodecs": "Tất cả codec",
+    "filenamePrefix": "Tiền tố (tùy chọn)",
+    "filenameSuffix": "Hậu tố (tùy chọn)",
+    "tplErrEmpty": "Mẫu tên tệp không được để trống",
+    "tplErrPercent": "Có dấu % đơn lẻ; muốn dùng dấu phần trăm theo nghĩa đen hãy viết %%",
+    "tplErrUnclosed": "Thiếu dấu ) đóng cho %(",
+    "tplErrConversion": "Kiểu chuyển đổi “{char}” không được hỗ trợ; sau trường dữ liệu phải là s/d v.v. (xem OUTPUT TEMPLATE của yt-dlp)"
   },
   "cookie": {
     "settings": "Cài đặt cookie",
@@ -369,7 +391,39 @@
     "searchPlaceholder": "Tìm tin nhắn hoặc người gửi...",
     "selectAtLeastOneField": "Vui lòng chọn ít nhất một trường để xuất",
     "saveChatData": "Lưu dữ liệu chat",
-    "chatDataSaved": "Đã lưu dữ liệu chat"
+    "chatDataSaved": "Đã lưu dữ liệu chat",
+    "chaptersTitle": "Lấy phân đoạn video",
+    "chaptersDesc": "Xem danh sách phân đoạn video và xuất ra JSON / CSV",
+    "chaptersPageDesc": "Lấy thông tin phân đoạn video (tiêu đề và khoảng thời gian). Có thể sao chép mốc thời gian để cắt tải về, hoặc xuất danh sách ra tệp",
+    "fetchChapters": "Lấy phân đoạn",
+    "chapterCount": "Tổng cộng {n} phân đoạn",
+    "noChaptersFound": "Video này không có phân đoạn",
+    "chapterCopied": "Đã sao chép thông tin phân đoạn vào bộ nhớ tạm",
+    "saveChapters": "Lưu phân đoạn",
+    "chaptersSaved": "Đã lưu danh sách phân đoạn",
+    "commentsTitle": "Xuất bình luận",
+    "commentsDesc": "Lấy bình luận video YouTube và xuất ra JSON / CSV",
+    "commentsPageDesc": "Lấy bình luận của video (chỉ dành cho YouTube). Bình luận càng nhiều thì càng mất thời gian, hãy điều chỉnh giới hạn theo nhu cầu",
+    "commentMaxCount": "Số lượng tối đa",
+    "commentSort": "Sắp xếp",
+    "commentSortTop": "Nổi bật",
+    "commentSortNew": "Mới nhất",
+    "fetchComments": "Lấy bình luận",
+    "commentTotal": "Đã tải {n} / {total} bình luận",
+    "noCommentsFound": "Không lấy được bình luận",
+    "commentAuthor": "Tác giả",
+    "commentText": "Nội dung",
+    "commentLikes": "Lượt thích",
+    "commentTime": "Thời gian",
+    "commentParent": "Bình luận cha",
+    "commentId": "ID bình luận",
+    "commentAuthorId": "ID tác giả",
+    "commentByUploader": "Trả lời của kênh",
+    "commentOnlyTopLevel": "Chỉ bình luận gốc",
+    "commentOnlyUploader": "Chỉ của kênh",
+    "commentSearchPlaceholder": "Tìm trong nội dung hoặc tác giả...",
+    "saveComments": "Lưu bình luận",
+    "commentsSaved": "Đã lưu bình luận"
   },
   "plugins": {
     "title": "Quản lý plugin",
@@ -470,6 +524,9 @@
     "denoDesc": "YouTube cần môi trường chạy JavaScript để phân tích thông tin video",
     "denoHint": "Deno là môi trường JavaScript mà yt-dlp cần để phân tích thông tin video YouTube. Cài Deno cho phép truy cập danh sách định dạng đầy đủ, gồm cả chất lượng cao hơn.",
     "goToSettings": "Đến Cài đặt",
-    "later": "Để sau"
+    "later": "Để sau",
+    "ffmpegTitle": "Cần FFmpeg để ghép video và âm thanh",
+    "ffmpegDesc": "Không tìm thấy FFmpeg hay FFprobe khả dụng nên không thể ghép luồng video và âm thanh đã chọn.",
+    "ffmpegHint": "Hãy vào Cài đặt để chọn bản cài trên hệ thống hoặc cài FFmpeg do ứng dụng quản lý, rồi bắt đầu tải lại."
   }
 }

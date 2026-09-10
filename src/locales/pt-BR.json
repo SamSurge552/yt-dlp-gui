@@ -16,13 +16,15 @@
     "selectAll": "Selecionar tudo",
     "deselectAll": "Desmarcar tudo",
     "saveFailed": "Falha ao salvar: {e}",
-    "downloadFailed": "Falha no download: {e}"
+    "downloadFailed": "Falha no download: {e}",
+    "copy": "Copiar"
   },
   "clipboard": {
     "empty": "A área de transferência está vazia",
     "invalidUrl": "O conteúdo da área de transferência não é uma URL válida",
     "readFailed": "Não foi possível ler a área de transferência",
-    "pasteSuccess": "Colado da área de transferência"
+    "pasteSuccess": "Colado da área de transferência",
+    "writeFailed": "Não foi possível gravar na área de transferência"
   },
   "tray": {
     "show": "Mostrar janela",
@@ -87,7 +89,8 @@
       "paused": "Pausado",
       "completed": "Concluído",
       "error": "Falhou",
-      "cancelled": "Cancelado"
+      "cancelled": "Cancelado",
+      "postprocessing": "Pós-processando..."
     },
     "fileNotExist": "Arquivo não encontrado",
     "fileDeletedOrMoved": "O arquivo foi excluído ou movido. Remover este registro da lista?",
@@ -207,7 +210,18 @@
     "appUpdateSuccess": "Atualização concluída, reiniciando",
     "appUpdateFailed": "Falha na atualização: {e}",
     "appIsLatest": "Você está na versão mais recente",
-    "systemBinaryNotice": "Você está usando o yt-dlp instalado no sistema. \"Verificar atualização\" só atualiza a cópia gerenciada pelo app e não afeta o binário em uso. Alterne \"Prioridade de caminho das ferramentas\" acima para \"Apenas app\" ou atualize pelo gerenciador de pacotes do sistema."
+    "systemBinaryNotice": "Você está usando o yt-dlp instalado no sistema. \"Verificar atualização\" só atualiza a cópia gerenciada pelo app e não afeta o binário em uso. Alterne \"Prioridade de caminho das ferramentas\" acima para \"Apenas app\" ou atualize pelo gerenciador de pacotes do sistema.",
+    "updateAvailable": "Atualização disponível",
+    "latestVersion": "Versão mais recente",
+    "ytdlpChannel": "Canal de versões",
+    "youtubeAdvanced": "Opções avançadas do YouTube",
+    "youtubeAdvancedDesc": "O PO Token e o visitor_data ajudam a contornar erros 403 e limites de requisições em certos vídeos do YouTube. Deixe em branco se não precisar. Veja a wiki do yt-dlp: Extractors > YouTube > PO Token Guide",
+    "youtubePoToken": "PO Token",
+    "youtubePoTokenPlaceholder": "ex.: mweb.gvs+XXXXXXXX...",
+    "youtubeVisitorData": "Visitor Data",
+    "youtubeVisitorDataPlaceholder": "ex.: CgtBYmNkZWZHaGlqaw%3D%3D",
+    "defaultFfmpegArgs": "Argumentos padrão do FFmpeg",
+    "defaultFfmpegArgsHint": "São aplicados a cada vídeo novo analisado; você ainda pode alterar o valor em cada tarefa"
   },
   "statusBar": {
     "title": "Status das ferramentas necessárias",
@@ -284,7 +298,15 @@
     "playlistTag": "Playlist {n}P",
     "views": " visualizações",
     "viewWan": "mil",
-    "viewYi": "mi"
+    "viewYi": "mi",
+    "codec": "Codec",
+    "allCodecs": "Todos os codecs",
+    "filenamePrefix": "Prefixo opcional",
+    "filenameSuffix": "Sufixo opcional",
+    "tplErrEmpty": "O modelo de nome de arquivo não pode ficar vazio",
+    "tplErrPercent": "Encontrado um % isolado; escreva o sinal de porcentagem literal como %%",
+    "tplErrUnclosed": "Falta o ) de fechamento de %(",
+    "tplErrConversion": "Tipo de conversão “{char}” não suportado; após o campo espera-se s/d etc. (veja OUTPUT TEMPLATE do yt-dlp)"
   },
   "cookie": {
     "settings": "Configurações de cookies",
@@ -369,7 +391,39 @@
     "searchPlaceholder": "Buscar mensagens ou remetentes...",
     "selectAtLeastOneField": "Selecione ao menos um campo de exportação",
     "saveChatData": "Salvar dados do chat",
-    "chatDataSaved": "Dados do chat salvos"
+    "chatDataSaved": "Dados do chat salvos",
+    "chaptersTitle": "Obter capítulos",
+    "chaptersDesc": "Ver os capítulos do vídeo e exportá-los como JSON / CSV",
+    "chaptersPageDesc": "Obtém os capítulos do vídeo (títulos e intervalos de tempo). Copie as marcações de tempo para recortar o download ou exporte a lista como arquivo",
+    "fetchChapters": "Obter capítulos",
+    "chapterCount": "{n} capítulo(s)",
+    "noChaptersFound": "Este vídeo não tem capítulos",
+    "chapterCopied": "Informações do capítulo copiadas para a área de transferência",
+    "saveChapters": "Salvar capítulos",
+    "chaptersSaved": "Capítulos salvos",
+    "commentsTitle": "Exportar comentários",
+    "commentsDesc": "Coletar comentários do YouTube e exportá-los como JSON / CSV",
+    "commentsPageDesc": "Coleta os comentários do vídeo (somente YouTube). Quanto mais comentários, mais demora — ajuste o limite conforme necessário",
+    "commentMaxCount": "Quantidade máx.",
+    "commentSort": "Ordenar",
+    "commentSortTop": "Em destaque",
+    "commentSortNew": "Mais recentes",
+    "fetchComments": "Obter comentários",
+    "commentTotal": "{n} de {total} comentários carregados",
+    "noCommentsFound": "Nenhum comentário obtido",
+    "commentAuthor": "Autor",
+    "commentText": "Conteúdo",
+    "commentLikes": "Curtidas",
+    "commentTime": "Data",
+    "commentParent": "Comentário pai",
+    "commentId": "ID do comentário",
+    "commentAuthorId": "ID do autor",
+    "commentByUploader": "Resposta do canal",
+    "commentOnlyTopLevel": "Somente comentários principais",
+    "commentOnlyUploader": "Somente o canal",
+    "commentSearchPlaceholder": "Pesquisar no texto ou no autor...",
+    "saveComments": "Salvar comentários",
+    "commentsSaved": "Comentários salvos"
   },
   "plugins": {
     "title": "Gerenciador de plugins",
@@ -470,6 +524,9 @@
     "denoDesc": "O YouTube requer um ambiente de execução JavaScript para analisar as informações do vídeo",
     "denoHint": "Deno é um runtime JavaScript que o yt-dlp precisa para analisar informações de vídeos do YouTube. Instalá-lo dá acesso à lista completa de formatos, incluindo qualidades superiores.",
     "goToSettings": "Ir para Configurações",
-    "later": "Mais tarde"
+    "later": "Mais tarde",
+    "ffmpegTitle": "O FFmpeg é necessário para a mesclagem",
+    "ffmpegDesc": "As faixas de vídeo e áudio selecionadas não podem ser combinadas porque o FFmpeg ou o FFprobe não foi encontrado.",
+    "ffmpegHint": "Vá em Configurações para usar uma instalação do sistema ou instalar o FFmpeg gerenciado pelo aplicativo e inicie o download novamente."
   }
 }

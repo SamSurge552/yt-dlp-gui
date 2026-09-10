@@ -16,13 +16,15 @@
     "selectAll": "すべて選択",
     "deselectAll": "選択解除",
     "saveFailed": "保存に失敗しました: {e}",
-    "downloadFailed": "ダウンロードに失敗しました: {e}"
+    "downloadFailed": "ダウンロードに失敗しました: {e}",
+    "copy": "コピー"
   },
   "clipboard": {
     "empty": "クリップボードは空です",
     "invalidUrl": "クリップボードの内容は有効なURLではありません",
     "readFailed": "クリップボードを読み取れません",
-    "pasteSuccess": "クリップボードから貼り付けました"
+    "pasteSuccess": "クリップボードから貼り付けました",
+    "writeFailed": "クリップボードに書き込めません"
   },
   "tray": {
     "show": "ウィンドウを表示",
@@ -87,7 +89,8 @@
       "paused": "一時停止中",
       "completed": "ダウンロード完了",
       "error": "ダウンロード失敗",
-      "cancelled": "キャンセル済み"
+      "cancelled": "キャンセル済み",
+      "postprocessing": "後処理中..."
     },
     "fileNotExist": "ファイルが見つかりません",
     "fileDeletedOrMoved": "ファイルが削除または移動されています。この記録をリストから削除しますか？",
@@ -207,7 +210,18 @@
     "appUpdateSuccess": "更新完了、再起動します",
     "appUpdateFailed": "更新に失敗しました: {e}",
     "appIsLatest": "最新バージョンです",
-    "systemBinaryNotice": "現在システムにインストールされた yt-dlp を使用中です。「更新の確認」はアプリ管理のコピーだけを更新するため、実際に使用中のバイナリには反映されません。上の「ツールパスの優先度」を「アプリのみ」に切り替えるか、システムのパッケージマネージャーで更新してください。"
+    "systemBinaryNotice": "現在システムにインストールされた yt-dlp を使用中です。「更新の確認」はアプリ管理のコピーだけを更新するため、実際に使用中のバイナリには反映されません。上の「ツールパスの優先度」を「アプリのみ」に切り替えるか、システムのパッケージマネージャーで更新してください。",
+    "updateAvailable": "更新あり",
+    "latestVersion": "最新バージョン",
+    "ytdlpChannel": "リリースチャンネル",
+    "youtubeAdvanced": "YouTube 詳細設定",
+    "youtubeAdvancedDesc": "PO Token と visitor_data は、一部の YouTube 動画で発生する 403 エラーやレート制限の回避に使用します。不要の場合は空欄にしてください。詳しくは yt-dlp wiki の「Extractors > YouTube > PO Token Guide」を参照してください",
+    "youtubePoToken": "PO Token",
+    "youtubePoTokenPlaceholder": "例: mweb.gvs+XXXXXXXX...",
+    "youtubeVisitorData": "Visitor Data",
+    "youtubeVisitorDataPlaceholder": "例: CgtBYmNkZWZHaGlqaw%3D%3D",
+    "defaultFfmpegArgs": "既定の FFmpeg 引数",
+    "defaultFfmpegArgsHint": "以降に新しく解析した動画へ自動的に適用されます。個々のタスクで個別に上書きできます"
   },
   "statusBar": {
     "title": "必要なツールの状態",
@@ -284,7 +298,15 @@
     "playlistTag": "再生リスト {n}本",
     "views": "回視聴",
     "viewWan": "万",
-    "viewYi": "億"
+    "viewYi": "億",
+    "codec": "コーデック",
+    "allCodecs": "すべてのコーデック",
+    "filenamePrefix": "任意の接頭辞",
+    "filenameSuffix": "任意の接尾辞",
+    "tplErrEmpty": "ファイル名テンプレートは空にできません",
+    "tplErrPercent": "単独の % があります。パーセント記号をそのまま使う場合は %% と記述してください",
+    "tplErrUnclosed": "%( に対応する ) がありません",
+    "tplErrConversion": "変換タイプ「{char}」はサポートされていません。フィールドの後には s/d などを指定してください（yt-dlp の OUTPUT TEMPLATE を参照）"
   },
   "cookie": {
     "settings": "Cookie 設定",
@@ -369,7 +391,39 @@
     "searchPlaceholder": "メッセージや送信者を検索...",
     "selectAtLeastOneField": "エクスポート項目を1つ以上選択してください",
     "saveChatData": "チャットデータを保存",
-    "chatDataSaved": "チャットデータを保存しました"
+    "chatDataSaved": "チャットデータを保存しました",
+    "chaptersTitle": "チャプターを取得",
+    "chaptersDesc": "動画のチャプター一覧を表示し、JSON / CSV としてエクスポート",
+    "chaptersPageDesc": "動画のチャプター情報（タイトルと時間範囲）を取得します。タイムスタンプをコピーしてダウンロード範囲の指定に使ったり、ファイルとして保存したりできます",
+    "fetchChapters": "チャプターを取得",
+    "chapterCount": "全 {n} チャプター",
+    "noChaptersFound": "この動画にはチャプターがありません",
+    "chapterCopied": "チャプター情報をクリップボードにコピーしました",
+    "saveChapters": "チャプターを保存",
+    "chaptersSaved": "チャプターを保存しました",
+    "commentsTitle": "コメントをエクスポート",
+    "commentsDesc": "YouTube の動画コメントを取得して JSON / CSV としてエクスポート",
+    "commentsPageDesc": "動画のコメントを取得します（YouTube のみ）。コメント数が多いほど時間がかかるため、上限は必要に応じて調整してください",
+    "commentMaxCount": "最大件数",
+    "commentSort": "並べ替え",
+    "commentSortTop": "人気順",
+    "commentSortNew": "新着順",
+    "fetchComments": "コメントを取得",
+    "commentTotal": "{n} / {total} 件のコメントを読み込みました",
+    "noCommentsFound": "コメントが取得できませんでした",
+    "commentAuthor": "投稿者",
+    "commentText": "本文",
+    "commentLikes": "高評価",
+    "commentTime": "投稿日時",
+    "commentParent": "親コメント",
+    "commentId": "コメント ID",
+    "commentAuthorId": "投稿者 ID",
+    "commentByUploader": "投稿者からの返信",
+    "commentOnlyTopLevel": "主コメントのみ",
+    "commentOnlyUploader": "投稿者のみ",
+    "commentSearchPlaceholder": "コメント本文または投稿者を検索...",
+    "saveComments": "コメントを保存",
+    "commentsSaved": "コメントを保存しました"
   },
   "plugins": {
     "title": "プラグイン管理",
@@ -470,6 +524,9 @@
     "denoDesc": "YouTubeの動画情報を解析するにはJavaScriptランタイムが必要です",
     "denoHint": "Deno は yt-dlp が YouTube の動画情報を解析するために必要な JavaScript ランタイムです。インストールすると、より高画質のオプションを含む完全なフォーマットリストが取得できます。",
     "goToSettings": "設定へ移動",
-    "later": "後で"
+    "later": "後で",
+    "ffmpegTitle": "映像と音声の結合には FFmpeg が必要です",
+    "ffmpegDesc": "利用可能な FFmpeg または FFprobe が見つからないため、選択した映像ストリームと音声ストリームを結合できません。",
+    "ffmpegHint": "設定でシステムにインストールされたものを選択するか、アプリ管理の FFmpeg をインストールしてから、ダウンロードをやり直してください。"
   }
 }
