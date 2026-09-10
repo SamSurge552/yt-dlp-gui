@@ -11,6 +11,7 @@ import deDE from "./de-DE.json";
 import frFR from "./fr-FR.json";
 import ptBR from "./pt-BR.json";
 import viVN from "./vi-VN.json";
+import ukUA from "./uk-UA.json";
 import skSK from "./sk-SK.json";
 
 // ==================== 语言注册表（新增语言只改这里 + 创建翻译文件） ====================
@@ -45,6 +46,7 @@ export const localeEntries: LocaleEntry[] = [
   { code: "ko-KR", flag: "🇰🇷", label: "한국어", match: (lang) => lang.startsWith("ko") },
   { code: "pt-BR", flag: "🇧🇷", label: "Português", match: (lang) => lang.startsWith("pt") },
   { code: "ru-RU", flag: "🇷🇺", label: "Русский", match: (lang) => lang.startsWith("ru") },
+  { code: "uk-UA", flag: "🇺🇦", label: "Українська", match: (lang) => lang.startsWith("uk") },
   { code: "vi-VN", flag: "🇻🇳", label: "Tiếng Việt", match: (lang) => lang.startsWith("vi") },
   { code: "sk-SK", flag: "🇸🇰", label: "Slovenčina", match: (lang) => lang.startsWith("sk") },
   {
@@ -107,6 +109,7 @@ const i18n = createI18n({
     "ko-KR": koKR,
     "pt-BR": ptBR,
     "ru-RU": ruRU,
+    "uk-UA": ukUA,
     "vi-VN": viVN,
     "zh-CN": zhCN,
     "zh-TW": zhTW,
