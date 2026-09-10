@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { useSettingStore } from "@/stores/setting";
+import { useI18n } from "vue-i18n";
 import DownloadDirCard from "@/components/DownloadDirCard.vue";
 
 const show = defineModel<boolean>("show", { required: true });
 const settingStore = useSettingStore();
+const { t } = useI18n();
 
 const qualityOptions = [
   { label: "2160p", value: 2160 },
@@ -14,23 +16,24 @@ const qualityOptions = [
   { label: "360p", value: 360 },
 ];
 
-const recodeOptions = [
-  { label: "—", value: "" },
+/** 与标准界面 ExtraOptionsCard 保持一致：空值显示“不转换 / 不限速”而非“—” */
+const recodeOptions = computed(() => [
+  { label: t("detail.noConversion"), value: "" },
   { label: "MP4", value: "mp4" },
   { label: "MKV", value: "mkv" },
   { label: "WebM", value: "webm" },
   { label: "MP3", value: "mp3" },
   { label: "FLAC", value: "flac" },
-];
+]);
 
-const limitRateOptions = [
-  { label: "—", value: "" },
+const limitRateOptions = computed(() => [
+  { label: t("detail.noLimit"), value: "" },
   { label: "500K/s", value: "500K" },
   { label: "1M/s", value: "1M" },
   { label: "2M/s", value: "2M" },
   { label: "5M/s", value: "5M" },
   { label: "10M/s", value: "10M" },
-];
+]);
 </script>
 
 <template>

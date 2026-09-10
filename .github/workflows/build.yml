@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 # 同一分支/PR 有新提交时自动取消旧的构建，避免多版本 Tauri 全平台构建浪费 runner 资源
 concurrency:

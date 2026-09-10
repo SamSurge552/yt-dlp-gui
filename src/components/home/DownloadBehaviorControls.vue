@@ -66,6 +66,7 @@ defineEmits<{ settings: [] }>();
 
 .behavior-tabs {
   width: 76px;
+  --n-tab-border-radius: 25px;
 }
 
 .behavior-tabs :deep(.n-tabs-pane-wrapper) {

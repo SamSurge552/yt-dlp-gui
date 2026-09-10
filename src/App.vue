@@ -388,6 +388,7 @@ onMounted(async () => {
 
     :deep(.n-button) {
       .n-button__content {
+        overflow: visible;
         transition:
           max-width 0.2s ease,
           opacity 0.2s ease;
@@ -407,6 +408,10 @@ onMounted(async () => {
       max-width: 0;
       opacity: 0;
       overflow: hidden;
+      white-space: nowrap;
+      line-height: normal;
+      padding-bottom: 0.18em;
+      margin-bottom: -0.18em;
       transition:
         max-width 0.2s ease,
         opacity 0.2s ease,
